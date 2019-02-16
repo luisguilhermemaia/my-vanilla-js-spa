@@ -1,0 +1,27 @@
+{
+  "name": "my-vanilla-js-spa",
+  "version": "1.0.0",
+  "description": "Spa with only plain javascript",
+  "main": "index.js",
+  "scripts": {
+    "start": "live-server src --verbose",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luisguilhermemaia/my-vanilla-js-spa.git"
+  },
+  "keywords": [
+    "vanilla",
+    "js"
+  ],
+  "author": "Guilherme Maia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luisguilhermemaia/my-vanilla-js-spa/issues"
+  },
+  "homepage": "https://github.com/luisguilhermemaia/my-vanilla-js-spa#readme",
+  "dependencies": {
+    "live-server": "^1.2.1"
+  }
+}
