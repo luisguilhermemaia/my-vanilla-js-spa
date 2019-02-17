@@ -7,6 +7,8 @@ import Register from './views/pages/Register.js';
 
 import Navbar from './views/components/Navbar.js';
 
+const hasNav = ['/posts'];
+
 const routes = {
   '/': Login,
   '/register': Register,
@@ -14,11 +16,13 @@ const routes = {
 };
 
 const router = async () => {
-  const header = null || document.getElementById('header-container');
   const content = null || document.getElementById('content-container');
 
-  header.innerHTML = await Navbar.render();
-  await Navbar.after_render();
+  if (location.hash.includes(hasNav[0])) {
+    const header = null || document.getElementById('header-container');
+    header.innerHTML = await Navbar.render();
+    await Navbar.after_render();
+  }
 
   const request = location.hash
     .slice(1)
