@@ -1,6 +1,6 @@
-let Navbar = {
+const Navbar = {
   render: async () => {
-    let view = /*html*/ `
+    const view = /*html*/ `
       <nav class="nav-bar">
         <div>
           <a href="/#/">

@@ -1,6 +1,6 @@
-let Error404 = {
+const Error404 = {
   render: async () => {
-    let view = /*html*/ `
+    const view = /*html*/ `
       <section class="section">
         <img src="/404.svg" alt="404" />
         <h1 style="color:white">Oopss... Page not found!</h1>

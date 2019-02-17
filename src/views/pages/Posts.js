@@ -17,10 +17,10 @@ const getPosts = async () => {
   }
 };
 
-let Posts = {
+const Posts = {
   render: async () => {
-    let posts = await getPosts();
-    let view = /*html*/ `
+    const posts = await getPosts();
+    const view = /*html*/ `
 			<div class="posts-container">
 				<ul>
 					${posts
