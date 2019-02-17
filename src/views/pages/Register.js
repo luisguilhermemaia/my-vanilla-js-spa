@@ -5,6 +5,7 @@ const Register = {
         <label>
           <img
             class="logo"
+            id="logo"
             src="/user.svg"
             alt="user"
           />
@@ -49,6 +50,22 @@ const Register = {
     `;
   },
   after_render: async () => {
+    document.getElementById('file-chooser').addEventListener('change', () => {
+      var preview = document.getElementById('logo');
+      var file = document.getElementById('file-chooser').files[0];
+      var reader = new FileReader();
+
+      reader.onloadend = function() {
+        preview.src = reader.result;
+      };
+
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        preview.src = '/user.svg';
+      }
+    });
+
     document
       .getElementById('e-login-button')
       .addEventListener('click', async () => {
@@ -59,8 +76,13 @@ const Register = {
           date: document.getElementById('date').value
         };
 
+        const avatar = document.getElementById('logo').src;
+
         if (validateForm(formValues)) {
-          var userExists = await handleSubmit(formValues);
+          var userExists = await handleSubmit({
+            ...formValues,
+            avatar
+          });
           if (userExists) {
             window.location.hash = '/posts';
           }
