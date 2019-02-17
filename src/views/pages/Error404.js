@@ -3,7 +3,7 @@ let Error404 = {
     let view = /*html*/ `
       <section class="section">
         <img src="/404.svg" alt="404" />
-        <h1>Oopss... Page not found!</h1>
+        <h1 style="color:white">Oopss... Page not found!</h1>
       </section>
     `;
     return view;

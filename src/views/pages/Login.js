@@ -4,8 +4,8 @@ const Login = {
       <form>
         <div class="form-header">
           <div>
-            <h1>Login in to our site</h1>
-            <h2>Enter username or password to log on</h2>
+            <h1 style="color:white">Login in to our site</h1>
+            <h2 style="color:white">Enter username or password to log on</h2>
           </div>
           <img src="/lock.svg" alt="lock" />
         </div>
@@ -30,7 +30,7 @@ const Login = {
         </div>
         <p>
           Don't have account?
-          <a href="/">Sign up here.</a>
+          <a href="/#/register">Sign up here.</a>
         </p>
       </form>
     `;
@@ -67,12 +67,10 @@ const Login = {
 };
 
 const handleSubmit = async values => {
-  // Fetch to api, using async/await
   try {
     var response = await fetch('https://jsonplaceholder.typicode.com/users');
     var users = await response.json();
 
-    // 'Simple' if to check if the user exists
     return users.filter(user => user.email === values.email);
   } catch (error) {
     console.warn(error);

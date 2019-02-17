@@ -15,21 +15,15 @@ form {
 }
 
 h1 {
+  color: black;
   font-family: 'Raleway', sans-serif;
   font-weight: 600;
   font-size: 1.2rem;
   margin-bottom: 0.25rem;
 }
 
-.text-black {
-  color: black;
-}
-
-.text-white {
-  color: #ffffff;
-}
-
 h2 {
+  color: black;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
   font-size: 0.7rem;
