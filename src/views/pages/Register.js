@@ -84,8 +84,8 @@ const validateForm = formValues => {
 
   const passwordError = document.getElementById('e-error-password');
   if (formValues.password.length < 4) {
-    error.classList.remove('displayNone');
-    error.textContent = 'Password must be at min 4 characters';
+    passwordError.classList.remove('displayNone');
+    passwordError.textContent = 'Password must be at min 4 characters';
     formIsInvalid = false;
   } else {
     passwordError.classList.add('displayNone');
@@ -93,10 +93,10 @@ const validateForm = formValues => {
 
   const emailError = document.getElementById('e-error-email');
   if (formValues.email !== '' && !emailIsValid(formValues.email)) {
-    error.classList.remove('displayNone');
-    error.textContent = 'Please enter a valid email';
+    emailError.classList.remove('displayNone');
+    emailError.textContent = 'Please enter a valid email';
     formIsInvalid = false;
-  } else {
+  } else if (emailIsValid(formValues.email)) {
     emailError.classList.add('displayNone');
   }
 

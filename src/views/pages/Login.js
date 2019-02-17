@@ -17,7 +17,7 @@ const Login = {
             placeholder="Enter your email"
             value="Sincere@april.biz"
           />
-          <div class="error-message displayNone" id="e-error-mail">email must be a valid email</div>
+          <div class="error-message displayNone" id="e-error-email"></div>
           <input
             name="password"
             id="password"
@@ -25,7 +25,7 @@ const Login = {
             placeholder="Enter your password"
             value="123456"
           />
-          <div class="error-message displayNone" id="e-error-password">password must be at min 4 characters</div>
+          <div class="error-message displayNone" id="e-error-password"></div>
           <button type="button" id="e-login-button">Submit</button>
         </div>
         <p>
@@ -39,31 +39,58 @@ const Login = {
     document
       .getElementById('e-login-button')
       .addEventListener('click', async () => {
-        let email = document.getElementById('email').value;
-        let password = document.getElementById('password').value;
-        if (!emailIsValid(email)) {
-          document
-            .getElementById('e-error-mail')
-            .classList.remove('displayNone');
-        } else if ((email == '') || (password == '')) {
-          document
-            .getElementById('e-error-mail')
-            .classList.remove('displayNone');
-          document
-            .getElementById('e-error-password')
-            .classList.remove('displayNone');
-        } else {
-          var existingUser = await handleSubmit({
-            email,
-            password
-          });
+        const formValues = {
+          email: document.getElementById('email').value,
+          password: document.getElementById('password').value
+        };
 
-          if (existingUser) {
+        if (validateForm(formValues)) {
+          var userExists = await handleSubmit(formValues);
+          if (userExists) {
             window.location.hash = '/posts';
           }
         }
       });
   }
+};
+
+const validateForm = formValues => {
+  let formIsInvalid = true;
+  Object.keys(formValues).forEach(function(key) {
+    const error = document.getElementById('e-error-' + key);
+    if (formValues[key] === '') {
+      error.classList.remove('displayNone');
+      error.textContent = key + ' is required';
+      formIsInvalid = false;
+    } else {
+      error.classList.add('displayNone');
+    }
+  });
+
+  const passwordError = document.getElementById('e-error-password');
+  if (formValues.password.length < 4) {
+    passwordError.classList.remove('displayNone');
+    passwordError.textContent = 'Password must be at min 4 characters';
+    formIsInvalid = false;
+  } else {
+    passwordError.classList.add('displayNone');
+  }
+
+  const emailError = document.getElementById('e-error-email');
+  if (formValues.email !== '' && !emailIsValid(formValues.email)) {
+    emailError.classList.remove('displayNone');
+    emailError.textContent = 'Please enter a valid email';
+    formIsInvalid = false;
+  } else if (emailIsValid(formValues.email)) {
+    emailError.classList.add('displayNone');
+  }
+
+  return formIsInvalid;
+};
+
+const emailIsValid = email => {
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
 };
 
 const handleSubmit = async values => {
@@ -75,11 +102,6 @@ const handleSubmit = async values => {
   } catch (error) {
     console.warn(error);
   }
-};
-
-const emailIsValid = email => {
-  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  return re.test(String(email).toLowerCase());
 };
 
 export default Login;

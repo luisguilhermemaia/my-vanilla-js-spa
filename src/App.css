@@ -85,6 +85,16 @@ li {
   margin-bottom: 20px;
 }
 
+label {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: space-between;
+  padding: 1.25rem;
+}
+
 .container {
   align-items: center;
   display: flex;
@@ -169,16 +179,15 @@ li {
   display: none;
 }
 
-/* 
-img {
+.logo {
   width: 10rem;
   border-radius: 50%;
   transition: 0.4s;
 }
 
-img:hover {
+.logo:hover {
   cursor: pointer;
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
   transition: 0.4s;
   transform: scale(1.09);
-} */
+}
