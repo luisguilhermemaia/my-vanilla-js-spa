@@ -17,11 +17,14 @@ const routes = {
 
 const router = async () => {
   const content = null || document.getElementById('content-container');
+  const header = null || document.getElementById('header-container');
 
   if (location.hash.includes(hasNav[0])) {
-    const header = null || document.getElementById('header-container');
+    header.classList.remove('displayNone');
     header.innerHTML = await Navbar.render();
     await Navbar.after_render();
+  } else {
+    header.classList.add('displayNone');
   }
 
   const request = location.hash

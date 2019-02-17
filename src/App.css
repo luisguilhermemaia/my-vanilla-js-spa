@@ -1,5 +1,6 @@
 body {
   background-color: rgb(98, 104, 189);
+  overflow: hidden;
 }
 
 form {
@@ -101,6 +102,7 @@ label {
   justify-content: center;
   min-height: 100vh;
   padding: 0 1.5rem 0 1.5rem;
+  overflow-y: scroll;
 }
 
 .nav-bar {
