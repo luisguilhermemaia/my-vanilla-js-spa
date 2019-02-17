@@ -105,12 +105,10 @@ const validateForm = formValues => {
   });
 
   const passwordError = document.getElementById('e-error-password');
-  if (formValues.password.length < 4) {
+  if (formValues.password !== '' && formValues.password.length < 4) {
     passwordError.classList.remove('displayNone');
     passwordError.textContent = 'Password must be at min 4 characters';
     formIsInvalid = false;
-  } else {
-    passwordError.classList.add('displayNone');
   }
 
   const emailError = document.getElementById('e-error-email');
