@@ -1,27 +1,32 @@
 {
   "name": "my-vanilla-js-spa",
   "version": "1.0.0",
-  "description": "Spa with only plain javascript",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "live-server src --verbose",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "live-server src --verbose"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/luisguilhermemaia/my-vanilla-js-spa.git"
   },
-  "keywords": [
-    "vanilla",
-    "js"
-  ],
-  "author": "Guilherme Maia",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/luisguilhermemaia/my-vanilla-js-spa/issues"
   },
-  "homepage": "https://github.com/luisguilhermemaia/my-vanilla-js-spa#readme",
+  "keywords": [],
+  "author": "Guilherme Maia",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-transform-runtime": "^7.1.0",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.7.0",
+    "browser-sync": "^2.26.0",
+    "rollup": "^0.66.4"
+  },
   "dependencies": {
-    "live-server": "^1.2.1"
+    "@babel/runtime": "^7.1.2",
+    "services": "0.0.3"
   }
 }
