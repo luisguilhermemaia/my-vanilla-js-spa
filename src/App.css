@@ -1,3 +1,161 @@
 body {
-  background-color: rgb(98,104,189);
+  background-color: rgb(98, 104, 189);
 }
+
+.container {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 1.5rem 0 1.5rem;
+}
+
+.nav-bar {
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 20px 0 rgba(0, 0, 0, 0.24);
+  background-color: #e9eaec;
+  left: 0;
+  padding: 16px 24px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  box-sizing: border-box;
+}
+
+.nav-logo {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.nav-logo:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  transition: 0.4s;
+  transform: scale(1.09);
+}
+
+.nav-items {
+  justify-content: flex-end !important;
+  display: flex;
+  flex-grow: 1;
+}
+
+.header-container > nav > .nav-logo:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  transition: 0.4s;
+  transform: scale(1.09);
+}
+
+.form-header {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  align-items: center;
+  display: flex;
+  padding: 1.25rem;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.form-body {
+  width: 100%;
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  justify-content: space-between;
+}
+
+.error-message {
+  font-size: 0.7rem;
+  color: red;
+  margin-top: 0.2rem;
+}
+
+form {
+  box-sizing: border-box;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 20px 0 rgba(0, 0, 0, 0.24);
+}
+
+h1 {
+  color: #FFFFFF;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+h2 {
+  color: #FFFFFF;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 0.7rem;
+}
+
+p {
+  font-family: 'Raleway', sans-serif;
+  color: #FFFFFF;
+  font-size: 0.8rem;
+  padding-bottom: 1rem;
+}
+
+a {
+  color: blue;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  height: 35px;
+  border: none;
+  background-color: #fff;
+  padding: 1.25rem;
+  margin-top: 1rem;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+button {
+  width: 100%;
+  text-align: center;
+  padding: 0.75rem;
+  display: block;
+  background-color: #5995ef;
+  color: #fff;
+  border-radius: 3px;
+  border: none;
+  margin-top: 1rem;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 20px 0 rgba(0, 0, 0, 0.24);
+}
+
+button:focus {
+  background: rgb(62, 113, 189);
+}
+
+.displayNone {
+  display: none;
+}
+
+/* 
+img {
+  width: 10rem;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+img:hover {
+  cursor: pointer;
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+  transition: 0.4s;
+  transform: scale(1.09);
+} */
